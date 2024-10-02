@@ -25,6 +25,10 @@ public class Driver implements Prototype<Driver> {
         this.age = age;
     }
 
+    public Driver(DriverBuilder driverBuilder) {
+
+    }
+
     @Override
     public Driver clone() {
         return new Driver(this.name, this.carModel, this.carMake, this.age);
@@ -69,5 +73,42 @@ public class Driver implements Prototype<Driver> {
     public void setExperience(String experience) {
         this.experience = experience;
     }
+
+    public class DriverBuilder {
+        private String name;
+        private String carModel;
+        private String licenseNumber;
+        private int experienceYears;
+        private boolean isAvailable;
+
+        public DriverBuilder(String name) {
+            this.name = name;
+        }
+
+        public DriverBuilder setCarModel(String carModel) {
+            this.carModel = carModel;
+            return this;
+        }
+
+        public DriverBuilder setLicenseNumber(String licenseNumber) {
+            this.licenseNumber = licenseNumber;
+            return this;
+        }
+
+        public DriverBuilder setExperienceYears(int experienceYears) {
+            this.experienceYears = experienceYears;
+            return this;
+        }
+
+        public DriverBuilder setIsAvailable(boolean isAvailable) {
+            this.isAvailable = isAvailable;
+            return this;
+        }
+
+        public Driver build() {
+            return new Driver(this);
+        }
+    }
+
 }
 
