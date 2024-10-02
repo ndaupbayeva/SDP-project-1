@@ -5,5 +5,6 @@ public class Main {
                 DriverManager driverManager = DriverManager.getInstance();
                 String driver = driverManager.findNearestDriver("Location A");
                 //passenger.assignTaxi(driver);
+        //
             }
     }
