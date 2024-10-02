@@ -1,12 +1,12 @@
 package org.example;
 
     public class StandardTaxi extends Taxi {
-        public StandardTaxi(String driverName, String license) {
-            super(driverName, license);
+        public StandardTaxi(Driver driver, String license) {
+            super(driver, license);
         }
 
         @Override
         public void takePassenger(String passenger) {
-            System.out.println("Just a regular ride for passenger " + passenger);
+            System.out.println("Just a regular ride for passenger " + passenger + " with driver " + getDriver().getName());
         }
     }

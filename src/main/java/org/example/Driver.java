@@ -1,7 +1,7 @@
 package org.example;
 
-public class Driver implements Prototype<Driver> {
-    private String name;
+public abstract class Driver {
+    /*private String name;
     private String carModel;
     private String carMake;
     private String age;
@@ -108,6 +108,20 @@ public class Driver implements Prototype<Driver> {
         public Driver build() {
             return new Driver(this);
         }
+    }
+
+     */
+
+    private String name;
+
+    public Driver(String name) {
+        this.name = name;
+    }
+
+    public abstract void drive();
+
+    public String getName() {
+        return name;
     }
 
 }
